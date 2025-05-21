@@ -29,7 +29,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/ons-aanbod">Ons aanbod</a></li>
             <li><a href="#">Hulp nodig?</a></li>
-            <li><a href="/add-car">Admin panel</a></li>
+            <li><a href="/add-car-form">Admin panel</a></li>
             
         </ul>
     </nav>
