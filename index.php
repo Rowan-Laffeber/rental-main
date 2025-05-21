@@ -37,6 +37,10 @@ if ($path === 'register-handler') {
     require_once __DIR__ . '/actions/register.php';
     exit;
 }
+if ($path === 'add-car-handler') {
+    require_once __DIR__ . '/actions/add-car.php';
+    exit;
+}
 
 $page = $path ?: 'home';
 $file = __DIR__ . '/pages/' . $page . '.php';
