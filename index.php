@@ -32,6 +32,10 @@ if ($path === 'login-handler') {
     require_once __DIR__ . '/actions/login.php';
     exit;
 }
+if ($path === 'add-car-handler') {
+    require_once __DIR__ . '/actions/add-car.php';
+    exit;
+}
 
 if ($path === 'register-handler') {
     require_once __DIR__ . '/actions/register.php';

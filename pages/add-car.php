@@ -2,9 +2,6 @@
 <main>
     <form action="/add-car-handler" class="account-form" method="post">
         <h2>Add car</h2>
-        <?php if (isset($_SESSION['success'])) { ?>
-            <div class="succes-message"><?= $_SESSION['success'] ?></div>
-        <?php } ?>
         <label for="brand">Brand car</label>
         <input type="text" name="brand" id="brand" placeholder="Volkswagen" required>
         <label for="type">Type</label>
