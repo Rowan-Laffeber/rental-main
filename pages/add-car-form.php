@@ -2,6 +2,14 @@
 <main>
     <form action="/add-car-handler" class="account-form" method="post">
         <h2>Add car</h2>
+             <?php
+             if (isset($_SESSION['success_car'])): ?>
+            <div class="succes-message">
+                <?= $_SESSION['success_car'] ?>
+            </div>
+            <?php
+            session_destroy();
+             endif; ?>
         <label for="brand">Brand car</label>
         <input type="text" name="brand" id="brand" placeholder="Volkswagen" required>
         <label for="type">Type</label>
@@ -20,7 +28,7 @@
         <input type="text" name="price-day" id="price-day" placeholder="50" required>
         <label for="picture">Picture</label>
         <input type="file" name="picture" id="picture" placeholder="VW-Polo-Red.png" required>
-        <input type="submit" value="add car" class="button-primary">
+        <input type="submit" value="add car" class="button-secondary">
     </form>
 </main>
 
