@@ -33,11 +33,11 @@
             <div class="car-type">
                 <div class="grid">
                     <div class="row"><span class="accent-color">Type Car</span><span>Sport</span></div>
-                    <div class="row"><span class="accent-color">Capacity</span><span>2 person</span></div>
+                    <div class="row"><span class="accent-color">Seats</span><span>2</span></div>
                 </div>
                 <div class="grid">
-                    <div class="row"><span class="accent-color">Steering</span><span>Manual</span></div>
-                    <div class="row"><span class="accent-color">Gasoline</span><span>70L</span></div>
+                    <div class="row"><span class="accent-color">Transmission</span><span>Manual</span></div>
+                    <div class="row"><span class="accent-color">Fuel / Capacity</span><span>Gasoline / 70L</span></div>
                 </div>
                 <div class="call-to-action">
                     <div class="row"><span class="font-weight-bold">€80,00</span> / dag</div>
