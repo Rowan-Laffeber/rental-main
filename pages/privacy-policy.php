@@ -13,7 +13,7 @@
 
 <section>
     <h2>1. Introduction</h2>
-    <p>Welcome to [Your Car Hire Company]. We are committed to protecting your personal information and your right to privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+    <p>Welcome to Morent. We are committed to protecting your personal information and your right to privacy. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
 </section>
 
 <section>
