@@ -1,4 +1,3 @@
-<?php require "includes/header.php" ?>
     <header>
         <div class="advertorials">
             <div class="advertorial">
@@ -21,33 +20,33 @@
 
     <main>
     <h2 class="section-title">Populaire auto's</h2>
-    <div class="cars">
-    <?php
-    try {
-        // Fetch a maximum of 4 cars
-        $get_all_cars = $conn->prepare("SELECT * FROM car LIMIT 4");
-        $get_all_cars->execute();
-        $cars = $get_all_cars->fetchAll(PDO::FETCH_ASSOC);
+        <div class="cars">
+        <?php
+        try {
+            $get_all_cars = $conn->prepare("SELECT * FROM car LIMIT 4");
+            $get_all_cars->execute();
+            $cars = $get_all_cars->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($cars as $car):
-            // Sanitize values
-            $brand = htmlspecialchars($car['brand']);
-            $class = htmlspecialchars($car['class']);
-            $tank_capacity = htmlspecialchars($car['tank_capacity']);
-            $transmission = htmlspecialchars($car['transmission']);
-            $seats = htmlspecialchars($car['seats']);
-            $price_day = htmlspecialchars($car['price_day']);
-            $carId = (int) $car['id'];
+            foreach ($cars as $car):
+                $brand = htmlspecialchars($car['brand']);
+                $type = htmlspecialchars($car['type']);
+                $class = htmlspecialchars($car['class']);
+                $tank_capacity = htmlspecialchars($car['tank_capacity']);
+                $transmission = htmlspecialchars($car['transmission']);
+                $seats = htmlspecialchars($car['seats']);
+                $price_day = htmlspecialchars($car['price_day']);
+                $carId = (int) $car['id'];
 
-            // Static or dynamic image
-            $imageSrc = "assets/images/products/car (1).svg"; // Replace with dynamic image if available
-    ?>
+                // Slug = lowercase brand-type, spaces to dash, remove invalid chars
+                $slug = strtolower($brand . '-' . $type);
+                $slug = preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', $slug));
+
+                $imageSrc = "assets/images/products/car (1).svg"; // dynamic if available
+        ?>
             <div class="car-details">
                 <div class="car-brand">
                     <h3><?= $brand ?></h3>
-                    <div class="car-type">
-                        <?= $class ?>
-                    </div>
+                    <div class="car-type"><?= $class ?></div>
                 </div>
                 <img src="<?= $imageSrc ?>" alt="Car image of <?= $brand ?>">
                 <div class="car-specification">
@@ -57,44 +56,44 @@
                 </div>
                 <div class="rent-details">
                     <span><span class="font-weight-bold">€<?= $price_day ?></span> / dag</span>
-                    <a href="/car-detail?id=<?= $carId ?>" class="button-primary">Bekijk nu</a>
+                    <a href="/car-detail/<?= $slug ?>-<?= $carId ?>" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
-    <?php
-        endforeach;
-    } catch (PDOException $e) {
-        echo "<p>Fout bij het ophalen van auto's: " . htmlspecialchars($e->getMessage()) . "</p>";
-    }
-    ?>
-</div>
+        <?php
+            endforeach;
+        } catch (PDOException $e) {
+            echo "<p>Fout bij het ophalen van auto's: " . htmlspecialchars($e->getMessage()) . "</p>";
+        }
+        ?>
+        </div>
     <h2 class="section-title">Aanbevolen auto's</h2>
-    <div class="cars">
-    <?php
-    try {
-        // Fetch a maximum of 8 cars
-        $get_all_cars = $conn->prepare("SELECT * FROM car LIMIT 8");
-        $get_all_cars->execute();
-        $cars = $get_all_cars->fetchAll(PDO::FETCH_ASSOC);
+        <div class="cars">
+        <?php
+        try {
+            $get_all_cars = $conn->prepare("SELECT * FROM car LIMIT 8");
+            $get_all_cars->execute();
+            $cars = $get_all_cars->fetchAll(PDO::FETCH_ASSOC);
 
-        foreach ($cars as $car):
-            // Sanitize values
-            $brand = htmlspecialchars($car['brand']);
-            $class = htmlspecialchars($car['class']);
-            $tank_capacity = htmlspecialchars($car['tank_capacity']);
-            $transmission = htmlspecialchars($car['transmission']);
-            $seats = htmlspecialchars($car['seats']);
-            $price_day = htmlspecialchars($car['price_day']);
-            $carId = (int) $car['id'];
+            foreach ($cars as $car):
+                $brand = htmlspecialchars($car['brand']);
+                $type = htmlspecialchars($car['type']);
+                $class = htmlspecialchars($car['class']);
+                $tank_capacity = htmlspecialchars($car['tank_capacity']);
+                $transmission = htmlspecialchars($car['transmission']);
+                $seats = htmlspecialchars($car['seats']);
+                $price_day = htmlspecialchars($car['price_day']);
+                $carId = (int) $car['id'];
 
-            // Static or dynamic image
-            $imageSrc = "assets/images/products/car (1).svg"; // Replace with dynamic image if available
-    ?>
+                // Slug = lowercase brand-type, spaces to dash, remove invalid chars
+                $slug = strtolower($brand . '-' . $type);
+                $slug = preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', $slug));
+
+                $imageSrc = "assets/images/products/car (1).svg"; // dynamic if available
+        ?>
             <div class="car-details">
                 <div class="car-brand">
                     <h3><?= $brand ?></h3>
-                    <div class="car-type">
-                        <?= $class ?>
-                    </div>
+                    <div class="car-type"><?= $class ?></div>
                 </div>
                 <img src="<?= $imageSrc ?>" alt="Car image of <?= $brand ?>">
                 <div class="car-specification">
@@ -104,19 +103,18 @@
                 </div>
                 <div class="rent-details">
                     <span><span class="font-weight-bold">€<?= $price_day ?></span> / dag</span>
-                    <a href="/car-detail?id=<?= $carId ?>" class="button-primary">Bekijk nu</a>
+                    <a href="/car-detail/<?= $slug ?>-<?= $carId ?>" class="button-primary">Bekijk nu</a>
                 </div>
             </div>
-    <?php
-        endforeach;
-    } catch (PDOException $e) {
-        echo "<p>Fout bij het ophalen van auto's: " . htmlspecialchars($e->getMessage()) . "</p>";
-    }
-    ?>
-</div>
+        <?php
+            endforeach;
+        } catch (PDOException $e) {
+            echo "<p>Fout bij het ophalen van auto's: " . htmlspecialchars($e->getMessage()) . "</p>";
+        }
+        ?>
+        </div>
     <div class="show-more">
         <a class="button-primary" href="#">Toon alle</a>
     </div>
     </main>
 
-<?php require "includes/footer.php" ?>

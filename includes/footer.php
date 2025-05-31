@@ -1,3 +1,4 @@
+</div> <!-- closing content div -->
 
 <footer>
     <div class="brand">
@@ -41,11 +42,12 @@
     </div>
     <div class="legal-links">
         <ul>
-            <li><a href="pages/privacy-policy.php">Privacy & Policy</a></li>
-            <li><a href="pages/terms-conditions.php">Terms & Condition</a></li>
+            <li><a href="/pages/privacy-policy.php">Privacy & Policy</a></li>
+            <li><a href="/pages/terms-conditions.php">Terms & Condition</a></li>
         </ul>
     </div>
 </div>
+
 <div id="loginModal" class="modal hidden">
     <div class="modal-content">
         <h2>Welkom bij Rydr</h2>
@@ -57,7 +59,8 @@
         <button class="modal-close">&times;</button>
     </div>
 </div>
-<script src="assets/javascript/main.js"></script>
+
+<script src="/assets/javascript/main.js"></script>
 
 </body>
 </html>

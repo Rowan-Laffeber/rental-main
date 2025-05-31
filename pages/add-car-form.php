@@ -1,4 +1,4 @@
-<?php require "includes/header.php" ?>
+
 <main>
     <form action="/add-car-handler" class="account-form" method="post">
         <h2>Add car</h2>
@@ -31,5 +31,3 @@
         <input type="submit" value="add car" class="button-secondary">
     </form>
 </main>
-
-<?php require "includes/footer.php" ?>
