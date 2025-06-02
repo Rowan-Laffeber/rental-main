@@ -73,6 +73,6 @@
         render_car_section($conn, "Aanbevolen auto's", 8);
         ?>
         <div class="show-more">
-            <a class="button-primary" href="#">Toon alle</a>
+            <a class="button-primary" href="/ons-aanbod">Toon alle</a>
         </div>
     </main>
