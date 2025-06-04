@@ -42,8 +42,8 @@
     </div>
     <div class="legal-links">
         <ul>
-            <li><a href="/pages/privacy-policy.php">Privacy & Policy</a></li>
-            <li><a href="/pages/terms-conditions.php">Terms & Condition</a></li>
+            <li><a href="/privacy-policy">Privacy & Policy</a></li>
+            <li><a href="/terms-conditions">Terms & Condition</a></li>
         </ul>
     </div>
 </div>

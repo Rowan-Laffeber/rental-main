@@ -1,6 +1,6 @@
 
 <main>
-    <form action="/register-handler" method="post" class="account-form">
+    <form action="/register-handler" method="post" class="big-form">
         <h2>Maak een account aan</h2>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="message">

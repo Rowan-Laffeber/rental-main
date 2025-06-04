@@ -1,6 +1,6 @@
 
 <main>
-    <form action="/add-car-handler" class="account-form" method="post">
+    <form action="/add-car-handler" class="big-form" method="post">
         <h2>Add car</h2>
              <?php
              if (isset($_SESSION['success_car'])): ?>
