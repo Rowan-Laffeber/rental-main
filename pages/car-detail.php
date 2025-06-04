@@ -83,7 +83,7 @@
                 </div>
                 <div class="call-to-action">
                     <div class="row"><span class="font-weight-bold">€<?= $price_day ?></span> / dag</div>
-                    <div class="row"><a href="/rent?id=<?= $carId ?>" class="button-primary">Huur nu</a></div>
+                    <div class="row"><a href="/rent-car?id=<?= $carId ?>" class="button-primary">Huur nu</a></div>
                 </div>
             </div>
         </div>
