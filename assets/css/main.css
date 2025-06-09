@@ -417,10 +417,13 @@ footer .footer-links .links ul a {
 }
 
 .cars {
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 20px;
 }
+
+
 .cars .car-details {
   display: flex;
   flex-direction: column;
@@ -479,5 +482,14 @@ footer .footer-links .links ul a {
 .big-form label {
   margin-bottom: 1em;
 }
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  .filter-section{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 
 /*# sourceMappingURL=main.css.map */
