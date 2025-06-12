@@ -28,6 +28,10 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $path = trim(parse_url($requestUri, PHP_URL_PATH), '/');
 
 // Handle special action routes first (logout, login, etc)
+if ($path === 'filter-cars') { 
+    require_once __DIR__ . '/actions/filter-cars.php'; 
+    exit;
+}
 if ($path === 'logout') {
     require_once __DIR__ . '/actions/logout.php';
     exit;
@@ -52,7 +56,7 @@ if ($path === 'register-handler') {
 $page = $_GET['page'] ?? ($path ?: 'home');
 $file = __DIR__ . '/pages/' . $page . '.php';
 
-// Include header (make sure assets use absolute paths inside header.php)
+// Include header
 include __DIR__ . '/includes/header.php';
 
 // Include the page content or 404

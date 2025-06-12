@@ -13,7 +13,22 @@
         <input type="text" name="adres" id="adres" placeholder="dorpsstraat 1" required>
         <label for="town">stad</label>
         <input type="text" name="town" id="town" placeholder="ons dorp" required>
-        <input type="submit" value="Maak account aan" class="button-primary">
+    
+        <h3>Rental info</h3>
+        <p>please enter your rental info</p>
+        <p>step 2 of 4</p>
+        <label for="adress">adres</label>
+        <input type="text" name="adres" id="adres" placeholder="dorpsstraat 1" required>
+        <label for="town">stad</label>
+        <input type="text" name="town" id="town" placeholder="ons dorp" required>
+        <label for="time">time</label>
+        <input type="text" name="time" id="time" placeholder="12:00" required>
+        <label for="date">date</label>
+        <input type="text" name="date" id="date" placeholder="dd/mm/yyyy" required>
+    
+        <input type="submit" value="rent now" class="button-primary">
+
+    
     </form>
 </main>
 

@@ -482,14 +482,52 @@ footer .footer-links .links ul a {
 .big-form label {
   margin-bottom: 1em;
 }
-.sidebar{
+/*filter start*/
+.sidebar {
   display: flex;
   flex-direction: column;
-  .filter-section{
-    display: flex;
-    flex-direction: column;
-  }
+  max-width: fit-content;
 }
+
+.sidebar .filter-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section.active .filter-content {
+  max-height: 1000px;
+  overflow: visible;
+}
+
+.filter-header {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-header .arrow {
+  transition: transform 0.3s ease;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  transform: rotate(45deg); /* down arrow */
+}
+
+.filter-section.active .filter-header .arrow {
+  transform: rotate(-135deg); /* up arrow */
+}
+
+
 
 
 /*# sourceMappingURL=main.css.map */
