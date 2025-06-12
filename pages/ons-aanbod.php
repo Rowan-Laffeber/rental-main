@@ -1,4 +1,4 @@
-<main>
+<main class="filterAndCars">
   <div class="sidebar">
     <h3>Category</h3>
 
@@ -40,13 +40,13 @@
     ?>
 
     <div class="filter-section">
-      <h3>Max Price</h3>
+      <label class="filter-header" for="priceRange">Max Price</label>
       <input type="range" id="priceRange" min="<?= $minPrice ?>" max="<?= $maxPrice ?>" value="<?= $maxPrice ?>" />
       <span id="priceValue">€<?= $maxPrice ?></span>
     </div>
   </div>
 
-  <h2>Ons aanbod</h2>
+  <!-- <h2>Ons aanbod</h2> -->
   <div class="cars" id="carResults">
     <?php
     $search = $_GET['search'] ?? '';

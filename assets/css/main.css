@@ -5,6 +5,7 @@
 
 body {
   background-color: #F6F7F9;
+  /* background-color: black;  for testing tiles, easy visable change */
   margin: 0;
 }
 
@@ -417,10 +418,12 @@ footer .footer-links .links ul a {
 }
 
 .cars {
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
   gap: 20px;
+
+
+  flex: 1 1 0;
 }
 
 
@@ -430,6 +433,7 @@ footer .footer-links .links ul a {
   background-color: white;
   padding: 24px;
   gap: 24px;
+  border-radius: 10px;
 }
 .cars .car-details h3 {
   margin: 0;
@@ -483,10 +487,24 @@ footer .footer-links .links ul a {
   margin-bottom: 1em;
 }
 /*filter start*/
+.filterAndCars{
+  display: flex;
+  flex-direction: row;
+  padding-left: 0em;
+  padding-right: 1em;
+  
+
+  gap: 20px;
+}
 .sidebar {
   display: flex;
   flex-direction: column;
   max-width: fit-content;
+  background-color: white;
+  padding: 24px;
+
+
+  flex: 0 0 250px;
 }
 
 .sidebar .filter-section {
@@ -513,6 +531,7 @@ footer .footer-links .links ul a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0.5em 0em;
 }
 
 .filter-header .arrow {
@@ -520,6 +539,7 @@ footer .footer-links .links ul a {
   border: solid black;
   border-width: 0 2px 2px 0;
   padding: 3px;
+  margin: 0.5em;
   transform: rotate(45deg); /* down arrow */
 }
 
