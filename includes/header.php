@@ -19,10 +19,20 @@
             Rydr.
         </a>
     </div>
-    <form action="">
-        <input type="search" name="" id="" placeholder="Welke auto wilt u huren?">
+    <form action="/ons-aanbod" method="get">
+        <input type="search" name="search" id="search" placeholder="Welke auto wilt u huren?">
         <img src="/assets/images/icons/search-normal.svg" alt="" class="search-icon">
     </form>
+    <script>
+        document.getElementById("search").addEventListener("keyup", myFunction);
+
+        function myFunction() {
+            const input = document.getElementById("search");
+            const inputValue = input.value;
+
+            console.log(inputValue);
+        }
+    </script>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
