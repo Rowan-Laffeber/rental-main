@@ -65,17 +65,18 @@ try {
         $seats = htmlspecialchars($car['seats']);
         $price_day = htmlspecialchars($car['price_day']);
         $carId = (int)$car['id'];
+        $car_link = trim($car['car_link']);
 
-        $slug = strtolower($brand . '-' . $type);
-        $slug = preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', $slug));
-        $imageSrc = "assets/images/products/car (1).svg";
+        $slug = strtolower(preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', "$brand-$type")));
 ?>
         <div class="car-details">
             <div class="car-brand">
                 <h3><?= $brand ?></h3>
                 <div class="car-type"><?= $class ?></div>
             </div>
-            <img src="<?= $imageSrc ?>" alt="Car image of <?= $brand ?>">
+            <?php if ($car_link !== ''): ?>
+                <img src="assets/images/products/<?= $car_link ?>" alt="Car image of <?= $brand ?>">
+            <?php endif; ?>
             <div class="car-specification">
                 <span><img src="/assets/images/icons/gas-station.svg" alt="Tank"><?= $tank_capacity ?>L</span>
                 <span><img src="/assets/images/icons/car.svg" alt="Transmission"><?= $transmission ?></span>
