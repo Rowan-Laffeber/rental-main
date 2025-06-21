@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - [Your Car Hire Company]</title>
-</head>
-<body>
-<header>
+
+<main>
+<div class="big-form">
+<section>
     <h1>Privacy Policy</h1>
     <p>Effective Date: May 30, 2025</p>
-</header>
+</section>
 
 <section>
     <h2>1. Introduction</h2>
@@ -76,9 +71,5 @@
     <p>Phone: +123-456-7890</p>
     <p>Address: 123 Car Street, Cityname, Country</p>
 </section>
-
-<footer>
-    <p> 2025 [Your Car Hire Company]. All rights reserved.</p>
-</footer>
-</body>
-</html>
+</div>
+</main>

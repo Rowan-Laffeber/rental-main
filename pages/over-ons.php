@@ -1,6 +1,7 @@
 
 <main>
-    <img src="/assets/images/banner.jpeg" alt="" width="1200">
+    <div class="big-form">
+    <img src="/assets/images/banner.jpeg" alt="" width="auto">
     <h2>Over Rydr.</h2>
     <div class="grid">
         <div class="row">
@@ -35,11 +36,9 @@
                     <p>Heb je vragen of hulp nodig bij je boeking? Neem contact op met ons ondersteuningsteam via <a href="mailto:support@rydr.com">support@rydr.com</a>.</p>
                 </section>
         </div>
-        <div class="row">
-            <img src="assets/images/work-place.png" alt="" width="400">
-        </div>
     </div>
-
+    <img src="assets/images/work-place.png" alt="" width="auto">
+    </div>
 </main>
 
 

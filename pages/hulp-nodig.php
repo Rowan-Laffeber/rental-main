@@ -1,44 +1,6 @@
-<?php
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
-        .help-body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f9fc;
-            margin: 0;
-            padding: 0;
-        }
-        h2 {
-            color: #2c3e50;
-        }
-
-        .faq-section {
-            margin-top: 30px;
-        }
-
-        .faq {
-            margin-bottom: 20px;
-        }
-
-        .faq h3 {
-            margin-bottom: 5px;
-            color: #2980b9;
-        }
-        @media (max-width: 600px) {
-            nav {
-                font-size: 14px;
-            }
-        }
-    </style>
-</head>
-<body class="help-body">
 
 <main>
+    <div class="big-form">
     <section class="faq-section">
         <h2>Frequently Asked Questions</h2>
 
@@ -67,6 +29,6 @@
             <p>We offer 24/7 roadside assistance. Call the emergency number provided in your rental agreement for immediate support.</p>
         </div>
     </section>
+    </div>
 </main>
-</body>
-</html>
+
