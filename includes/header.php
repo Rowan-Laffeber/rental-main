@@ -1,3 +1,18 @@
+<?php
+$isAdmin = false;
+
+if (isset($_SESSION['id'])) {
+    $stmt = $conn->prepare("SELECT role FROM account WHERE id = :id");
+    $stmt->bindParam(":id", $_SESSION['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && $user['role'] == 1) {
+        $isAdmin = true;
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +44,6 @@
         function myFunction() {
             const input = document.getElementById("search");
             const inputValue = input.value;
-
             console.log(inputValue);
         }
     </script>
@@ -38,23 +52,25 @@
             <li><a href="/">Home</a></li>
             <li><a href="/ons-aanbod">Ons aanbod</a></li>
             <li><a href="/hulp-nodig">Hulp nodig?</a></li>
-            <li><a href="/add-car-form">Admin panel</a></li>
+            <?php if ($isAdmin): ?>
+                <li><a href="/add-car-form">Admin panel</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
     <div class="menu">
-        <?php if(isset($_SESSION['id'])){ ?>
-        <div class="account">
-            <img src="/assets/images/profil.png" alt="">
-            <div class="account-dropdown">
-                <ul>
-                    <li><img src="/assets/images/icons/setting.svg" alt=""><a href="#">Naar account</a></li>
-                    <li><img src="/assets/images/icons/logout.svg" alt=""><a href="/logout">Uitloggen</a></li>
-                </ul>
+        <?php if (isset($_SESSION['id'])): ?>
+            <div class="account">
+                <img src="/assets/images/profil.png" alt="">
+                <div class="account-dropdown">
+                    <ul>
+                        <li><img src="/assets/images/icons/setting.svg" alt=""><a href="/profile">Naar account</a></li>
+                        <li><img src="/assets/images/icons/logout.svg" alt=""><a href="/logout">Uitloggen</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <?php }else{ ?>
-            <a href="" class="button-primary">Start met huren</a>
-        <?php } ?>
+        <?php else: ?>
+            <a href="/login-form" class="button-primary">Start met huren</a>
+        <?php endif; ?>
     </div>
 </div>
 <div class="content">
