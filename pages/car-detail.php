@@ -1,6 +1,5 @@
 <?php
-// Move all PHP logic before output to set variables and handle redirects/errors
-
+    
 $brand = $type = $class = $seats = $transmission = $tank_capacity = $price_day = $car_link = '';
 $carId = 0;
 
@@ -22,7 +21,7 @@ try {
             $transmission = htmlspecialchars($car['transmission']);
             $tank_capacity = htmlspecialchars($car['tank_capacity']);
             $price_day = htmlspecialchars($car['price_day']);
-            $car_link = trim($car['car_link']);
+            $car_link = htmlspecialchars($car['car_link']);
 
             $expectedSlug = strtolower($brand . '-' . $type);
             $expectedSlug = preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', $expectedSlug));

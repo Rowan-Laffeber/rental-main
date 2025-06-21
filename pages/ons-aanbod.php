@@ -72,7 +72,7 @@
             $seats = htmlspecialchars($car['seats']);
             $price_day = htmlspecialchars($car['price_day']);
             $carId = (int)$car['id'];
-            $car_link = trim($car['car_link']);
+            $car_link = htmlspecialchars($car['car_link']);
             $slug = strtolower(preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', "$brand-$type")));
     ?>
         <div class="car-details">

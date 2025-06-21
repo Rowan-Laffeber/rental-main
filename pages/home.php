@@ -36,7 +36,7 @@ function render_car_section($conn, $title, $limit) {
                 $seats = htmlspecialchars($car['seats']);
                 $price_day = htmlspecialchars($car['price_day']);
                 $carId = (int) $car['id'];
-                $car_link = trim($car['car_link']);
+                $car_link = htmlspecialchars($car['car_link']);
 
                 $slug = strtolower($brand . '-' . $type);
                 $slug = preg_replace('/[^a-z0-9\-]/', '', str_replace(' ', '-', $slug));
