@@ -1,7 +1,7 @@
 
 <main>
     <div class="big-form">
-    <img src="/assets/images/banner.jpeg" alt="" width="auto">
+    <img src="/assets/images/banner.webp" alt="" width="auto">
     <h2>Over Rydr.</h2>
     <div class="grid">
         <div class="row">
