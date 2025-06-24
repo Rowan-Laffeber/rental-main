@@ -47,7 +47,7 @@ if (isset($_SESSION['id'])) {
             console.log(inputValue);
         }
     </script>
-    <nav>
+    <nav id="mobilenav">
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/ons-aanbod">Ons aanbod</a></li>
@@ -57,7 +57,17 @@ if (isset($_SESSION['id'])) {
             <?php endif; ?>
         </ul>
     </nav>
+
     <div class="menu">
+    <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+        ☰
+    </button>
+    <script>
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobilenav');
+            nav.classList.toggle('open');
+        }
+    </script>
         <?php if (isset($_SESSION['id'])): ?>
             <div class="account">
                 <img src="/assets/images/profil.png" alt="">

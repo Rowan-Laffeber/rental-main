@@ -13,6 +13,11 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+  }
+}
 .grid .row {
   flex: 1;
 }
@@ -179,6 +184,11 @@ main {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .advertorials {
+    flex-direction: column;
+  }
+}
 
 .advertorial {
   flex: 1;
@@ -197,18 +207,30 @@ main {
   letter-spacing: -0.03em; /* Primary/0 */
   color: #FFFFFF; /* Inside auto layout */
   margin: 0;
+
 }
 .advertorial p {
   color: white;
   max-width: 50%;
+
 }
+@media (max-width: 768px) {
+  .advertorial{
+    h2, p{
+      max-width: 90%;
+    }
+  }
+}
+
 .advertorial img {
   max-width: 75%;
   margin: 0 auto;
+
 }
 .advertorial .background-header-element {
   position: absolute;
   z-index: 0;
+
 }
 
 footer {
@@ -216,18 +238,34 @@ footer {
   display: flex;
   padding: 2em 4em;
 }
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+}
 footer .brand {
   flex: 1;
+  align-items: inherit;
+}
+@media (max-width: 768px) {
+  footer .brand {
+    justify-items: center;
+  }
 }
 footer .footer-links {
   flex: 1;
   display: flex;
   gap: 3em;
   justify-content: flex-end;
+  flex-direction: inherit;
+  align-items: inherit;
 }
 footer .footer-links .links {
   display: flex;
   flex-direction: column;
+  align-items: inherit;
 }
 footer .footer-links .links h3 {
   font-weight: bold;
@@ -238,6 +276,9 @@ footer .footer-links .links ul {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  align-items: inherit;
+
+
 }
 footer .footer-links .links ul a {
   text-decoration: none;
@@ -252,10 +293,27 @@ footer .footer-links .links ul a {
   background-color: white;
   border-top: 1px solid rgba(19, 19, 19, 0.16);
 }
+@media (max-width: 768px) {
+  .legal-footer {
+    flex-direction: column;
+  }
+}
+.legal-footer .legal-links{
+  flex-direction: inherit;
+
+
+}
 .legal-footer .legal-links ul {
   display: flex;
   gap: 1em;
   list-style: none;
+  flex-direction: inherit;
+  padding-inline-start: 0;
+}
+@media (max-width: 768px) {
+  .legal-links ul {
+    align-items: center;
+  }
 }
 .legal-footer .legal-links ul a {
   text-decoration: none;
@@ -325,11 +383,55 @@ footer .footer-links .links ul a {
   height: 20px;
   pointer-events: none;
 }
+.hamburger {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 20;
+  margin-left: auto;
+}
 .topbar nav ul {
   display: flex;
   gap: 1em;
   list-style: none;
   padding-left: 0;
+}
+@media (max-width: 900px) {
+  .topbar nav{
+    position: absolute;
+    left: 0;
+    z-index: 6;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+    top: -250%;
+    transition: top 0.3s ease;
+    background-color: white;
+    padding: 1em 0em;
+  }
+  .topbar nav ul{
+    z-index: 6;
+
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .topbar{
+    padding: 1rem 1rem;
+    z-index: 6;
+  }
+  .hamburger{
+    display: block;
+}
+.topbar nav.open {
+  top: 4em; /* shows menu */
+}
+
+}
+.mobile-nav.show {
+  top: 100%; /* drop down below the topbar */
 }
 .topbar nav ul a {
   text-decoration: none;
@@ -396,6 +498,14 @@ footer .footer-links .links ul a {
 .car-detail .grid {
   gap: 50px;
 }
+@media (max-width: 768px) {
+  .car-detail .grid {
+  gap: 16px;
+  }
+  .car-type .grid{
+    gap: 0px;
+  }
+}
 .car-detail .grid .car-type .row {
   display: flex;
   justify-content: space-between;
@@ -403,6 +513,11 @@ footer .footer-links .links ul a {
 .car-detail .call-to-action {
   display: flex;
   padding-top: 5em;
+}
+@media (max-width: 768px) {
+  .car-detail .call-to-action {
+    padding-top: 1em;
+  }
 }
 .car-detail .call-to-action .row {
   justify-content: left !important;
@@ -493,8 +608,6 @@ footer .footer-links .links ul a {
   flex-direction: row;
   padding-left: 0em;
   padding-right: 1em;
-  
-
   gap: 20px;
 }
 .sidebar {
@@ -503,9 +616,63 @@ footer .footer-links .links ul a {
   max-width: fit-content;
   background-color: white;
   padding: 24px;
-
-
+  transition: transform 0.3s ease-in-out;
+  z-index: 2;
   flex: 0 0 250px;
+}
+
+/* Mobile filter toggle button */
+.filter-toggle {
+  display: none;
+  position: fixed;
+  top: 6em; /* adjust depending on topbar */
+  left: 0;
+  z-index: 4;
+  background: #3563e9;
+  color: white;
+  border: none;
+  padding: 0.7em 0.3em;
+  border-radius: 0px 0px 4px 0px;
+  cursor: pointer;
+  p.strow{
+    line-height: 0;
+    margin-block-start: 0em;
+    margin-block-end: 0.5em;
+  }
+  p.ndrow{
+    line-height: 0;
+    margin-block-start: 0.5em;
+    margin-block-end: 0em;
+  }
+}
+/* By default on desktop, sidebar is visible */
+@media (min-width: 768px) {
+  .sidebar {
+    position: relative;
+    transform: none !important;
+  }
+  .filter-toggle {
+    display: none;
+  }
+}
+
+/* On mobile: sidebar becomes off-canvas */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  }
+  .ons-aanbod-cars{
+    margin-left: 1em;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .filter-toggle {
+    display: block;
+  }
 }
 
 .sidebar .filter-section {

@@ -1,5 +1,5 @@
 <main class="filterAndCars">
-  <div class="sidebar">
+  <div class="sidebar" id="filterSidebar">
     <h3>Category</h3>
 
     <?php
@@ -45,8 +45,15 @@
       <span id="priceValue">€<?= $maxPrice ?></span>
     </div>
   </div>
+  <button class="filter-toggle" onclick="toggleFilter()"><p class="strow">--o-</p><p class="ndrow">-o--</p></button>
+  <script>
+  function toggleFilter() {
+    const sidebar = document.getElementById('filterSidebar');
+    sidebar.classList.toggle('open');
+  }
+</script>
 
-  <div class="cars" id="carResults">
+  <div class="cars ons-aanbod-cars" id="carResults">
     <?php
     $search = $_GET['search'] ?? '';
 
