@@ -13,7 +13,7 @@ if (accountImage) {
     });
 }
 
-const startButton = document.querySelector('.button-primary');
+const startButton = document.getElementById('login');
 if (startButton) {
     startButton.addEventListener('click', function(e) {
         e.preventDefault();

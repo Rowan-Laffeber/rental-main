@@ -79,7 +79,7 @@ if (isset($_SESSION['id'])) {
                 </div>
             </div>
         <?php else: ?>
-            <a href="/login-form" class="button-primary">Start met huren</a>
+            <a href="/login-form" class="button-primary" id="login">Start met huren</a>
         <?php endif; ?>
     </div>
 </div>

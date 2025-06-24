@@ -52,6 +52,6 @@ if (!$user || $user['role'] != 1) {
         <label for="picture">Picture</label>
         <input type="file" name="picture" id="picture" required>
 
-        <input type="submit" value="add car" class="button-secondary">
+        <input type="submit" value="add car" class="button-primary">
     </form>
 </main>
