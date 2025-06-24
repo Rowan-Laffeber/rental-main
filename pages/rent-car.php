@@ -1,7 +1,7 @@
 
 <main>
      <h2>Rent car</h2>
-    <form action="/register-handler" method="post" class="big-form">
+    <form action="#" method="post" class="big-form">
         <h3>Billing info</h3>
         <p>please enter your billing info</p>
         <p>step 1 of 4</p>
