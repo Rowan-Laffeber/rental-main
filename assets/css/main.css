@@ -384,7 +384,7 @@ footer .footer-links .links ul a {
   pointer-events: none;
 }
 .hamburger {
-  display: block;
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
